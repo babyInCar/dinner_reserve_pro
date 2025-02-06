@@ -145,7 +145,7 @@
 
 
   <record model="ir.ui.view" id="dinner_book_pro_line_list">
-      <field name="name">订餐统计</field>
+      <field name="name">Reserve Statics</field>
       <field name="model">dinner.book.pro.line</field>
       <field name="arch" type="xml">
         <list create="false" edit="false" delete="false">
@@ -165,13 +165,13 @@
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="dinner_book_pro_action_window">
-      <field name="name">订餐</field>
+      <field name="name">Reserve</field>
       <field name="res_model">dinner.book.pro</field>
       <field name="view_mode">list,form</field>
     </record>
 
    <record model="ir.actions.act_window" id="dinner_book_pro_line_action">
-       <field name="name">订餐统计</field>
+       <field name="name">Reserve Statics</field>
       <field name="res_model">dinner.book.pro.line</field>
       <field name="view_mode">list</field>
       <field name="domain">[('book_id.pay_status','in', ('paid', 'not_pay')), ('book_id.status', '=', 'book')]</field>
@@ -196,16 +196,16 @@
 
     <!-- Top menu item -->
 
-    <menuitem name="湖北病理订餐系统" id="dinner_book_pro.menu_root" groups="base.group_user"/>
+    <menuitem name="Dinner Reserve System" id="dinner_book_pro.menu_root" groups="base.group_user" web_icon="dinner_book_pro,static/description/icon.png"/>
 
     <!-- menu categories -->
-    <menuitem name="订餐" id="dinner_book_pro_order" parent="dinner_book_pro.menu_root" groups="base.group_user" sequence="10"/>
+    <menuitem name="Reserve" id="dinner_book_pro_order" parent="dinner_book_pro.menu_root" groups="base.group_user" sequence="10"/>
 
 
     <!-- actions -->
-    <menuitem name="订餐" id="dinner_book" parent="dinner_book_pro_order"
+    <menuitem name="Reserve" id="dinner_book" parent="dinner_book_pro_order"
               action="dinner_book_pro_action_window" groups="base.group_user"/>
-    <menuitem name="订餐统计" id="dinner_book_statics" parent="dinner_book_pro_order"
+    <menuitem name="Reserve Statics" id="dinner_book_statics" parent="dinner_book_pro_order"
              action="dinner_book_pro_line_action" groups="dinner_book_pro.group_dinner_manager"/>
 
     </data>
